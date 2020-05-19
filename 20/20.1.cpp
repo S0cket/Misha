@@ -5,9 +5,7 @@
 using namespace std;
 
 int main(void) {
-	time_t t = time(NULL);
-	cout << "t = " << t << endl;
-	srand(t);
+	srand(time(NULL));
 
 	int n, s = 0;
 	cin >> n;
