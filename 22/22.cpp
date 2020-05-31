@@ -9,7 +9,7 @@ int count(string::iterator begin, string::iterator end, int cnt = 0) {
 	if (begin >= end)
 		return cnt;
 	if (isdigit((int)*begin))
-		return count(begin + 1, end, cnt + 1);
+		return count(begin + 1, end, cnt + *begin - '0');
 	else
 		return count(begin + 1, end, cnt);
 }
