@@ -34,9 +34,7 @@ int compare(int* a, int* b) {
 }
 
 int main(void) {
-	time_t t = time(NULL);
-	printf("t = %ld\n", t);
-	srand(t);
+	srand(time(NULL));
 
 	scanf("%d%d", &n, &m);
 
@@ -82,5 +80,9 @@ int main(void) {
 		printf("\n");
 	}
 	//
+
+	for (int i = 0; i < n; ++ i)
+		delete [] arr[i];
+	delete [] arr;
 	return 0;
 }
