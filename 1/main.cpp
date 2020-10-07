@@ -11,19 +11,26 @@ struct Mystr {
 	int stepen;
 };
 
+list<Mystr>::iterator offset(list<Mystr>::iterator iter, int n) {
+	for (int i = 0; i < n; ++ i)
+		iter++;
+	return iter;
+}
+
 void Diff(list<Mystr> p, list<Mystr> &q) {
 	q = p;
 	for (auto i = q.begin(); i != q.end(); ++ i) {
 		i->kof *= i->stepen;
 		i->stepen --;
 	}
+	int cnt = 0;
 	for (auto i = q.begin(); i != q.end();) {
 		if (i->stepen == -1) {
 			q.erase(i);
-			i = q.begin();
+			i = offset(q.begin(), cnt);
 		}
 		else
-			++ i;
+			++ i; ++ cnt;
 	}
 }
 
