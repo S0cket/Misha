@@ -28,7 +28,7 @@ public:
 	}
 
 	bool is() {
-		return (A + B > C && A + C > B && B + C > A);
+		return (A + B >= C && A + C >= B && B + C >= A);
 	}
 
 	double P() {
@@ -76,7 +76,7 @@ public:
 	}
 
 	bool is() {
-		return (A + B > C && A + C > B && B + C > A && (A == C || A == B || B == C));
+		return (A + B >= C && A + C >= B && B + C >= A && (A == C || A == B || B == C));
 	}
 
 	~rtre() {}
